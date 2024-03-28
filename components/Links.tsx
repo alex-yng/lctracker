@@ -1,56 +1,35 @@
-"use client";
-
-import { UserButton, auth } from "@clerk/nextjs";
+import { UserButton, currentUser } from "@clerk/nextjs";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import DefaultLink from "@/components/DefaultLink";
 
 interface Link {
   name: string;
   href: string;
 }
 
-const Links = ({
+const Links = async ({
   links,
-  isLoggedIn,
+  isHome = false,
 }: {
   links: Link[];
-  isLoggedIn: boolean;
+  isHome?: boolean;
 }) => {
-  const path = usePathname();
+  const user = await currentUser();
 
   return (
-    <ul className='flex  gap-8'>
+    <ul className='flex gap-8 items-center'>
       {links.map((link) =>
         link.href === "/sign-up" ? (
-          !isLoggedIn ? (
-            <li key={link.href}>
-              <Link
-                className={`${
-                  path === link.href
-                    ? "text-white"
-                    : "hover:text-slate-200 transition-colors duration-300"
-                }`}
-                href={link.href}
-              >
-                {link.name}
-              </Link>
-            </li>
+          !user ? (
+            <Button variant={"outline"} className='text-black' asChild>
+              <Link href='/sign-up'>Sign-Up</Link>
+            </Button>
           ) : (
             <UserButton />
           )
         ) : (
-          <li key={link.href}>
-            <Link
-              className={`${
-                path === link.href
-                  ? "text-white"
-                  : "hover:text-slate-200 transition-colors duration-300"
-              }`}
-              href={link.href}
-            >
-              {link.name}
-            </Link>
-          </li>
+          <DefaultLink link={link} />
         )
       )}
     </ul>

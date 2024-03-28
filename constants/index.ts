@@ -4,7 +4,7 @@ export const headerLinks = [
   { name: "Tracker", href: "/tracker" },
 ];
 
-export const socialLinks = [
+export const homeLinks = [
   { name: "GitHub", href: "https://github.com/alex-yng/lctracker" },
   { name: "About", href: "/about" },
   { name: "Signup", href: "/sign-up" },
