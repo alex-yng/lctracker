@@ -26,10 +26,10 @@ const Header = async () => {
             </Button>
           </SheetTrigger>
           <SheetContent className='bg-black border-none'>
-            <nav className='text-white text-4xl h-screen grid place-items-center'>
+            <nav className='text-white text-lg h-screen'>
               <Links
                 links={[...headerLinks, ...homeLinks]}
-                className='flex flex-col items-center justify-center gap-8'
+                className='flex flex-col items-center gap-8 mt-8'
               />
             </nav>
           </SheetContent>

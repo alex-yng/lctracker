@@ -5,18 +5,27 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import fetchStats from "@/lib/fetchStats";
+import { Loader2 } from "lucide-react";
 
 const Hero = () => {
   const [username, setUsername] = useState("");
+  const [loading, setLoading] = useState(false);
   const [easys, setEasys] = useState("N/A");
   const [mediums, setMediums] = useState("N/A");
   const [hards, setHards] = useState("N/A");
 
   const previewStats = async () => {
-    let data = await fetchStats(username, "solved");
-    setEasys(data.easySolved);
-    setMediums(data.mediumSolved);
-    setHards(data.hardSolved);
+    setLoading(true);
+    try {
+      let data = await fetchStats(username, "solved");
+      setEasys(data.easySolved);
+      setMediums(data.mediumSolved);
+      setHards(data.hardSolved);
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+      setLoading(false);
+    }
   };
 
   return (
@@ -39,14 +48,21 @@ const Hero = () => {
             placeholder='Enter your username'
             onChange={(e) => setUsername(e.target.value)}
           />
-          <Button
-            variant='outline'
-            className='h-8'
-            asChild
-            onClick={previewStats}
-          >
-            <a href='#preview'>Preview</a>
-          </Button>
+          {loading ? (
+            <Button disabled>
+              <Loader2 className='mr-2 h-4 w-4 animate-spin' />
+              Please wait
+            </Button>
+          ) : (
+            <Button
+              variant='outline'
+              className='h-8'
+              asChild
+              onClick={previewStats}
+            >
+              <a href='#preview'>Preview</a>
+            </Button>
+          )}
         </div>
       </div>
       <div className='container mx-auto justify-center flex gap-4 place-items-center text-white my-16'>
