@@ -10,15 +10,15 @@ interface Link {
 
 const Links = async ({
   links,
-  isHome = false,
+  className = "",
 }: {
   links: Link[];
-  isHome?: boolean;
+  className?: string;
 }) => {
   const user = await currentUser();
 
   return (
-    <ul className='flex gap-8 items-center'>
+    <ul className={`${className}`}>
       {links.map((link) =>
         link.href === "/sign-up" ? (
           !user ? (
