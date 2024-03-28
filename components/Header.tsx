@@ -1,5 +1,4 @@
 import { headerLinks, socialLinks } from "@/constants";
-import Link from "next/link";
 import Links from "@/components/Links";
 
 const Header = () => {
