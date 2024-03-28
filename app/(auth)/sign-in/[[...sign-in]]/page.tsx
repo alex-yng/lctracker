@@ -1,6 +1,6 @@
 import { SignIn } from "@clerk/nextjs";
 
-export const Signin = () => {
+export const Page = () => {
   return (
     <section className='h-screen w-full grid place-items-center'>
       <SignIn />
@@ -8,4 +8,4 @@ export const Signin = () => {
   );
 };
 
-export default Signin;
+export default Page;
