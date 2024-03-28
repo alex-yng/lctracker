@@ -21,7 +21,7 @@ const Hero = () => {
 
   return (
     // Hero section
-    <section>
+    <section className='h-screen'>
       <div className='container flex flex-col items-center gap-12'>
         <h1 className=' text-5xl font-semibold text-center text-white'>
           Grinding Leetcode?
