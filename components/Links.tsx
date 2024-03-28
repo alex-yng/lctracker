@@ -33,6 +33,12 @@ const Links = async ({
           ) : (
             <UserButton />
           )
+        ) : link.href === "/dashboard" ? (
+          !user ? (
+            ""
+          ) : (
+            <DefaultLink key={link.href} link={link} />
+          )
         ) : (
           <DefaultLink key={link.href} link={link} />
         )

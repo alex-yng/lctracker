@@ -1,11 +1,10 @@
 export const headerLinks = [
-  { name: "Home", href: "/" },
-  { name: "Progress", href: "/progress" },
-  { name: "Tracker", href: "/tracker" },
+  { name: "Preview", href: "/#preview" },
+  { name: "Features", href: "/#features" },
 ];
 
 export const homeLinks = [
-  { name: "GitHub", href: "https://github.com/alex-yng/lctracker" },
+  { name: "Dashboard", href: "/dashboard" },
   { name: "About", href: "/about" },
   { name: "Signup", href: "/sign-up" },
 ];

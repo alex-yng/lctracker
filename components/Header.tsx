@@ -3,6 +3,7 @@ import Links from "@/components/Links";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { CiMenuBurger } from "react-icons/ci";
+import Link from "next/link";
 
 const Header = async () => {
   return (
@@ -11,7 +12,9 @@ const Header = async () => {
         <nav className='justify-self-start self-center'>
           <Links links={headerLinks} className='flex gap-8 items-center' />
         </nav>
-        <h1 className='justify-self-center self-center'>LC Tracker</h1>
+        <Link href='/' className='justify-self-center self-center'>
+          LC Tracker
+        </Link>
         <nav className='justify-self-end'>
           <Links links={homeLinks} className='flex gap-8 items-center' />
         </nav>
