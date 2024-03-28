@@ -7,5 +7,5 @@ export const headerLinks = [
 export const socialLinks = [
   { name: "GitHub", href: "https://github.com/alex-yng/lctracker" },
   { name: "LinkedIn", href: "https://www.linkedin.com/in/alx-yng/" },
-  { about: "About", href: "/about" },
+  { name: "About", href: "/about" },
 ];
