@@ -8,9 +8,9 @@ import fetchStats from "@/lib/fetchStats";
 
 const Hero = () => {
   const [username, setUsername] = useState("");
-  const [easys, setEasys] = useState(0);
-  const [mediums, setMediums] = useState(0);
-  const [hards, setHards] = useState(0);
+  const [easys, setEasys] = useState("N/A");
+  const [mediums, setMediums] = useState("N/A");
+  const [hards, setHards] = useState("N/A");
 
   const previewStats = async () => {
     let data = await fetchStats(username, "solved");
@@ -49,10 +49,10 @@ const Hero = () => {
           </Button>
         </div>
       </div>
-      <div className='container grid grid-cols-3 place-items-center text-white my-16'>
-        <h1>{easys}</h1>
-        <h1>{mediums}</h1>
-        <h1>{hards}</h1>
+      <div className='container mx-auto justify-center flex gap-4 place-items-center text-white my-16'>
+        <h1>Easys Solved: {easys}</h1>
+        <h1>Mediums Solved: {mediums}</h1>
+        <h1>Hards Solved: {hards}</h1>
       </div>
     </section>
   );
