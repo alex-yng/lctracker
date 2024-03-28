@@ -22,7 +22,12 @@ const Links = async ({
       {links.map((link) =>
         link.href === "/sign-up" ? (
           !user ? (
-            <Button variant={"outline"} className='text-black' asChild>
+            <Button
+              key={link.href}
+              variant={"outline"}
+              className='text-black'
+              asChild
+            >
               <Link href='/sign-up'>Sign-Up</Link>
             </Button>
           ) : (
