@@ -12,12 +12,12 @@ const DefaultLink = ({ link }: { link: Link }) => {
   const path = usePathname();
 
   return (
-    <li key={link.href}>
+    <li key={link.name}>
       <Link
         className={`${
           path === link.href
-            ? "text-white"
-            : "hover:text-slate-200 transition-colors duration-300"
+            ? "dark:text-foreground"
+            : "hover:dark:text-primary/80 transition-colors duration-300"
         }`}
         href={link.href}
       >

@@ -23,9 +23,9 @@ const Links = async ({
         link.href === "/sign-up" ? (
           !user ? (
             <Button
-              key={link.href}
+              key={link.name}
               variant={"outline"}
-              className='text-black'
+              className='dark:text-primary'
               asChild
             >
               <Link href='/sign-up'>Sign-Up</Link>
@@ -37,10 +37,10 @@ const Links = async ({
           !user ? (
             ""
           ) : (
-            <DefaultLink key={link.href} link={link} />
+            <DefaultLink key={link.name} link={link} />
           )
         ) : (
-          <DefaultLink key={link.href} link={link} />
+          <DefaultLink key={link.name} link={link} />
         )
       )}
     </ul>

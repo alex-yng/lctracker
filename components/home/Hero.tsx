@@ -39,32 +39,33 @@ const Hero = () => {
     // Hero section
     <section className='h-screen'>
       <div className='container flex flex-col items-center gap-12'>
-        <h1 className=' text-5xl font-semibold text-center text-white'>
+        <h1 className=' text-5xl font-semibold text-center dark:text-primary'>
           Grinding Leetcode?
         </h1>
-        <h2 className='text-2xl max-w-[30ch] text-center text-white'>
+        <h2 className='text-2xl max-w-[30ch] text-center dark:text-primary'>
           Use LC Tracker to <strong>view, track</strong>, and{" "}
           <strong>manage</strong> your Leetcode progress and improve{" "}
           <strong>faster</strong>.
         </h2>
         <div className='flex flex-col items-center gap-3'>
-          <Label className='text-base text-slate-300'>Preview your stats</Label>
+          <Label className='text-base dark:text-primary'>
+            Preview your stats
+          </Label>
           <Input
-            className='w-64 bg-black border-slate-800 text-center text-white'
+            className='w-64 dark:text-primary text-center'
             type='text'
             placeholder='Enter your username'
             onChange={(e) => setUsername(e.target.value)}
           />
           {loading ? (
-            <Button className='h-8' disabled>
+            <Button className='h-8 dark:text-primary' disabled>
               <Loader2 className='mr-2 h-4 w-4 animate-spin' />
               Please wait
             </Button>
           ) : (
             <Button
               variant='outline'
-              className='h-8'
-              asChild
+              className='h-8 dark:text-primary'
               onClick={previewStats}
             >
               <a href='#preview'>Preview</a>
@@ -76,22 +77,21 @@ const Hero = () => {
         <div>
           <h1>Easys Solved: {easys}</h1>
           <Progress
-            className='bg-black'
-            indicatorColor='bg-white'
+            indicatorColor='bg-green-500'
             value={(Number(easys) / totalEasy) * 100}
           />
         </div>
         <div>
           <h1>Mediums Solved: {mediums}</h1>
           <Progress
-            indicatorColor='bg-white'
+            indicatorColor='bg-yellow-500'
             value={(Number(mediums) / totalMedium) * 100}
           />
         </div>
         <div>
           <h1>Hards Solved: {hards}</h1>
           <Progress
-            indicatorColor='bg-white'
+            indicatorColor='bg-rose-500'
             value={(Number(hards) / totalHard) * 100}
           />
         </div>
