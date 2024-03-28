@@ -34,7 +34,7 @@ const Links = async ({
             <UserButton />
           )
         ) : (
-          <DefaultLink link={link} />
+          <DefaultLink key={link.href} link={link} />
         )
       )}
     </ul>
