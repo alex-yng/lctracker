@@ -6,6 +6,6 @@ export const headerLinks = [
 
 export const socialLinks = [
   { name: "GitHub", href: "https://github.com/alex-yng/lctracker" },
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/alx-yng/" },
   { name: "About", href: "/about" },
+  { name: "Signup", href: "/sign-up" },
 ];

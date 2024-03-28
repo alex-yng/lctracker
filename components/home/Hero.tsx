@@ -49,7 +49,7 @@ const Hero = () => {
           </Button>
         </div>
       </div>
-      <div className='container grid grid-cols-3 place-items-center text-white'>
+      <div className='container grid grid-cols-3 place-items-center text-white my-16'>
         <h1>{easys}</h1>
         <h1>{mediums}</h1>
         <h1>{hards}</h1>
