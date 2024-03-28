@@ -28,7 +28,7 @@ const Header = async () => {
               <CiMenuBurger size='24px' />
             </Button>
           </SheetTrigger>
-          <SheetContent className='bg-black border-none'>
+          <SheetContent>
             <nav className='text-white text-lg h-screen'>
               <Links
                 links={[...headerLinks, ...homeLinks]}

@@ -3,6 +3,7 @@
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
 import { useState } from "react";
 import fetchStats from "@/lib/fetchStats";
 import { Loader2 } from "lucide-react";
@@ -11,16 +12,22 @@ const Hero = () => {
   const [username, setUsername] = useState("");
   const [loading, setLoading] = useState(false);
   const [easys, setEasys] = useState("N/A");
+  const [totalEasy, setTotalEasy] = useState(783);
   const [mediums, setMediums] = useState("N/A");
+  const [totalMedium, setTotalMedium] = useState(1624);
   const [hards, setHards] = useState("N/A");
+  const [totalHard, setTotalHard] = useState(687);
 
   const previewStats = async () => {
     setLoading(true);
     try {
-      let data = await fetchStats(username, "solved");
+      let data = await fetchStats(username);
       setEasys(data.easySolved);
+      setTotalEasy(data.totalEasy);
       setMediums(data.mediumSolved);
+      setTotalMedium(data.totalMedium);
       setHards(data.hardSolved);
+      setTotalHard(data.totalHard);
       setLoading(false);
     } catch (error) {
       console.error(error);
@@ -49,7 +56,7 @@ const Hero = () => {
             onChange={(e) => setUsername(e.target.value)}
           />
           {loading ? (
-            <Button disabled>
+            <Button className='h-8' disabled>
               <Loader2 className='mr-2 h-4 w-4 animate-spin' />
               Please wait
             </Button>
@@ -65,10 +72,29 @@ const Hero = () => {
           )}
         </div>
       </div>
-      <div className='container mx-auto justify-center flex gap-4 place-items-center text-white my-16'>
-        <h1>Easys Solved: {easys}</h1>
-        <h1>Mediums Solved: {mediums}</h1>
-        <h1>Hards Solved: {hards}</h1>
+      <div className='container mx-auto justify-center flex gap-4 text-white my-16'>
+        <div>
+          <h1>Easys Solved: {easys}</h1>
+          <Progress
+            className='bg-black'
+            indicatorColor='bg-white'
+            value={(Number(easys) / totalEasy) * 100}
+          />
+        </div>
+        <div>
+          <h1>Mediums Solved: {mediums}</h1>
+          <Progress
+            indicatorColor='bg-white'
+            value={(Number(mediums) / totalMedium) * 100}
+          />
+        </div>
+        <div>
+          <h1>Hards Solved: {hards}</h1>
+          <Progress
+            indicatorColor='bg-white'
+            value={(Number(hards) / totalHard) * 100}
+          />
+        </div>
       </div>
     </section>
   );
