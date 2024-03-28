@@ -3,10 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-interface Link {
+type Link = {
   name: string;
   href: string;
-}
+};
 
 const DefaultLink = ({ link }: { link: Link }) => {
   const path = usePathname();

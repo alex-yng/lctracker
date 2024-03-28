@@ -8,7 +8,7 @@ import Link from "next/link";
 const Header = async () => {
   return (
     <>
-      <header className='hidden bg-black fixed w-screen md:grid grid-cols-3 self-center text-slate-300 text-lg px-16 py-4'>
+      <header className='hidden dark:bg-black/90 fixed w-screen md:grid grid-cols-3 self-center text-slate-300 text-lg px-16 py-4'>
         <nav className='justify-self-start self-center'>
           <Links links={headerLinks} className='flex gap-8 items-center' />
         </nav>
@@ -20,7 +20,7 @@ const Header = async () => {
         </nav>
       </header>
 
-      <header className='text-slate-300 bg-black text-xl flex justify-between py-4 px-8 md:hidden'>
+      <header className='text-slate-300 fixed w-full dark:bg-black/90 text-xl flex justify-between py-4 px-8 md:hidden'>
         <h1 className='justify-self-center self-center'>LC Tracker</h1>
         <Sheet>
           <SheetTrigger asChild>
