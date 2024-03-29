@@ -39,33 +39,37 @@ const Hero = () => {
     // Hero section
     <section className='h-screen'>
       <div className='container flex flex-col items-center gap-12'>
-        <h1 className=' text-5xl font-semibold text-center dark:text-primary'>
+        <h1 className=' text-5xl font-semibold text-center dark:text-foreground'>
           Grinding Leetcode?
         </h1>
-        <h2 className='text-2xl max-w-[30ch] text-center dark:text-primary'>
+        <h2 className='text-2xl max-w-[30ch] text-center dark:text-foreground'>
           Use LC Tracker to <strong>view, track</strong>, and{" "}
           <strong>manage</strong> your Leetcode progress and improve{" "}
           <strong>faster</strong>.
         </h2>
         <div className='flex flex-col items-center gap-3'>
-          <Label className='text-base dark:text-primary'>
+          <Label className='text-base dark:text-foreground'>
             Preview your stats
           </Label>
           <Input
-            className='w-64 dark:text-primary text-center'
+            className='w-64 dark:text-foreground text-center'
             type='text'
             placeholder='Enter your username'
             onChange={(e) => setUsername(e.target.value)}
           />
           {loading ? (
-            <Button className='h-8 dark:text-primary' disabled>
+            <Button
+              variant='outline'
+              className='h-8 dark:text-foreground'
+              disabled
+            >
               <Loader2 className='mr-2 h-4 w-4 animate-spin' />
               Please wait
             </Button>
           ) : (
             <Button
               variant='outline'
-              className='h-8 dark:text-primary'
+              className='h-8 dark:text-foreground'
               onClick={previewStats}
             >
               <a href='#preview'>Preview</a>
@@ -73,7 +77,7 @@ const Hero = () => {
           )}
         </div>
       </div>
-      <div className='container mx-auto justify-center flex gap-4 text-white my-16'>
+      <div className='container mx-auto justify-center flex gap-4 dark:text-foreground my-16'>
         <div>
           <h1>Easys Solved: {easys}</h1>
           <Progress

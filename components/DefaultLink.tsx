@@ -15,9 +15,9 @@ const DefaultLink = ({ link }: { link: Link }) => {
     <li key={link.name}>
       <Link
         className={`${
-          path === link.href
-            ? "dark:text-foreground"
-            : "hover:dark:text-primary/80 transition-colors duration-300"
+          path !== link.href
+            ? "brightness-50"
+            : "text-foreground hover:dark:text-foreground/80 transition-colors duration-300"
         }`}
         href={link.href}
       >

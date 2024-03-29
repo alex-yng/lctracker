@@ -25,7 +25,7 @@ const Links = async ({
             <Button
               key={link.name}
               variant={"outline"}
-              className='dark:text-primary'
+              className='dark:text-foreground'
               asChild
             >
               <Link href='/sign-up'>Sign-Up</Link>
