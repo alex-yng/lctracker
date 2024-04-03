@@ -16,10 +16,7 @@ const Header = () => {
               <NavLink key={link.name} name={link.name} href={link.href} />
             ))}
             <li>
-              <Button
-                variant='outline'
-                className='hover:scale-105 transition-transform duration-300 font-bold'
-              >
+              <Button className='hover:scale-105 transition-transform duration-300 font-bold bg-gradient-to-tr from-blue-400 to-purple-300 dark:from-blue-600 dark:to-purple-500'>
                 get started
               </Button>
             </li>
