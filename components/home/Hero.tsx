@@ -31,7 +31,7 @@ const Hero = () => {
 
   return (
     <section className='container min-h-screen flex flex-col md:flex-row items-center justify-center gap-8'>
-      <div className='flex flex-col gap-4 lg:gap-0 w-full container'>
+      <div className='flex flex-col gap-4 lg:gap-8 w-full text-center md:text-left container'>
         <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold'>
           <strong className='bg-gradient-to-r from-blue-400 to-violet-400 dark:from-blue-600 dark:to-violet-600 inline-block text-transparent bg-clip-text'>
             Improve faster than ever.
@@ -57,7 +57,7 @@ const Hero = () => {
           of your progress.
         </p>
       </div>
-      <div className='container flex flex-col justify-center gap-4 p-4'>
+      <div className='container w-4/5 flex flex-col justify-center gap-4 p-4'>
         <h1 className='font-semibold text-lg text-center lg:text-start'>
           preview your LC progress
         </h1>
