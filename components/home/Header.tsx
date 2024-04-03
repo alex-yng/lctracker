@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import NavLink from "@/components/home/NavLink";
+import { headerLinks as Links } from "@/const";
 
 const Header = () => {
   return (
@@ -7,17 +9,16 @@ const Header = () => {
       <h1>Header</h1>
       <nav>
         <ul className='flex gap-16 items-center'>
-          <li className=''>
-            <Link href=''>Mission</Link>
-          </li>
+          {Links.map((link) => (
+            <NavLink key={link.name} name={link.name} href={link.href} />
+          ))}
           <li>
-            <Link href=''>Features</Link>
-          </li>
-          <li>
-            <Link href=''>About</Link>
-          </li>
-          <li>
-            <Button>Join Now</Button>
+            <Button
+              variant='outline'
+              className='hover:scale-110 transition-transform duration-300 border-primary'
+            >
+              Join Now
+            </Button>
           </li>
         </ul>
       </nav>
