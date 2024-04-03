@@ -3,13 +3,14 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
+import { Skeleton } from "@/components/ui/skeleton";
 import { userData } from "@/const";
 import fetchStats from "@/lib/fetchStats";
 import { useEffect, useState } from "react";
 
 const Home = () => {
-  const [username, setUsername] = useState("alicks111");
-  const [loading, setLoading] = useState(false);
+  const [username, setUsername] = useState("alex");
+  const [loading, setLoading] = useState(true);
   const [userData, setUserData] = useState({ userName: "." } as userData);
 
   const previewStats = async () => {
@@ -53,7 +54,7 @@ const Home = () => {
           </p>
         </div>
         <div className='w-4/5 h-full flex flex-col justify-center gap-4 p-4'>
-          <h1 className='font-semibold text-lg'>Preview your stats</h1>
+          <h1 className='font-semibold text-lg'>preview your LC progress</h1>
           <div className='flex gap-2 justify-self-start'>
             <Input
               placeholder='username'
@@ -61,31 +62,45 @@ const Home = () => {
             />
             <Button onClick={previewStats}>Preview</Button>
           </div>
-          <div className='flex flex-col gap-4 w-full px-2'>
-            <h1 className='text-4xl'>{userData.userName}</h1>
-            <div className='flex flex-col gap-2'>
-              <p>Easys: {userData.easySolved}</p>
-              <Progress
-                value={(userData.easySolved / userData.totalEasy) * 100}
-                indicatorColor='bg-gradient-to-r from-green-500 to-green-300'
-              />
+          {loading ? (
+            <div className='flex flex-col gap-4 w-full px-2'>
+              <Skeleton className='w-36 h-8' />
+              <Skeleton className='w-24 h-4' />
+              <Skeleton className='w-full h-4' />
+              <Skeleton className='w-28 h-4' />
+              <Skeleton className='w-full h-4' />
+              <Skeleton className='w-20 h-4' />
+              <Skeleton className='w-full h-4' />
             </div>
-            <div className='flex flex-col gap-2'>
-              <p>Mediums: {userData.mediumSolved}</p>
-              <Progress
-                value={(userData.mediumSolved / userData.totalMedium) * 100}
-                indicatorColor='bg-gradient-to-r from-amber-500 to-amber-300'
-              />
-            </div>
-            <div className='flex flex-col gap-2'>
-              <p>Hards: {userData.hardSolved} </p>
-              <Progress
-                value={(userData.hardSolved / userData.totalHard) * 100}
-                indicatorColor='bg-gradient-to-r from-rose-600 to-rose-400'
-              />
-            </div>
-          </div>
-          <div></div>
+          ) : (
+            <>
+              <div className='flex flex-col gap-4 w-full px-2'>
+                <h1 className='text-4xl'>{userData.userName}</h1>
+                <div className='flex flex-col gap-2'>
+                  <p>Easys: {userData.easySolved}</p>
+                  <Progress
+                    value={(userData.easySolved / userData.totalEasy) * 100}
+                    indicatorColor='bg-gradient-to-r from-green-500 to-green-300'
+                  />
+                </div>
+                <div className='flex flex-col gap-2'>
+                  <p>Mediums: {userData.mediumSolved}</p>
+                  <Progress
+                    value={(userData.mediumSolved / userData.totalMedium) * 100}
+                    indicatorColor='bg-gradient-to-r from-amber-500 to-amber-300'
+                  />
+                </div>
+                <div className='flex flex-col gap-2'>
+                  <p>Hards: {userData.hardSolved} </p>
+                  <Progress
+                    value={(userData.hardSolved / userData.totalHard) * 100}
+                    indicatorColor='bg-gradient-to-r from-rose-600 to-rose-400'
+                  />
+                </div>
+              </div>
+              <div></div>
+            </>
+          )}
         </div>
       </section>
     </main>
