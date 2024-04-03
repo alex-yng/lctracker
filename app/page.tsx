@@ -5,12 +5,12 @@ import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { userData } from "@/const";
 import fetchStats from "@/lib/fetchStats";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Home = () => {
-  const [username, setUsername] = useState("neal_wu");
+  const [username, setUsername] = useState("alicks111");
   const [loading, setLoading] = useState(false);
-  const [userData, setUserData] = useState({} as userData);
+  const [userData, setUserData] = useState({ userName: "." } as userData);
 
   const previewStats = async () => {
     setLoading(true);
@@ -22,6 +22,10 @@ const Home = () => {
     }
     setLoading(false);
   };
+
+  useEffect(() => {
+    previewStats();
+  }, []);
 
   return (
     <main className='w-full min-h-screen grid place-content-center py-4 px-8 md:px-12 lg:px-16'>
@@ -48,10 +52,11 @@ const Home = () => {
             of your progress.
           </p>
         </div>
-        <div className='w-4/5 h-full flex flex-col justify-center p-4'>
-          <div className='flex gap-2 justify-self-start mb-4'>
+        <div className='w-4/5 h-full flex flex-col justify-center gap-4 p-4'>
+          <h1 className='font-semibold text-lg'>Preview your stats</h1>
+          <div className='flex gap-2 justify-self-start'>
             <Input
-              placeholder='Enter your username'
+              placeholder='username'
               onChange={(e) => setUsername(e.target.value)}
             />
             <Button onClick={previewStats}>Preview</Button>
