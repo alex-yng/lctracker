@@ -30,8 +30,8 @@ const Home = () => {
   }, []);
 
   return (
-    <main className='w-full min-h-screen grid place-content-center py-4 px-8 md:px-12 lg:px-16'>
-      <section className='hero m-8 md:m-16 lg:m-24 xl:m-32 grid lg:grid-cols-2 gap-8 place-items-center'>
+    <main className='w-full min-h-screen grid place-content-center py-2 px-4 md:py-4 sm:px-8 md:px-12 lg:px-16'>
+      <section className='hero sm:m-8 md:m-16 lg:m-24 xl:m-32 grid lg:grid-cols-2 gap-8 place-items-center'>
         <div className='flex flex-col gap-4 lg:gap-0 w-full max-w-[65%]'>
           <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold'>
             <strong className='bg-gradient-to-r from-blue-400 to-violet-400 dark:from-blue-600 dark:to-violet-600 inline-block text-transparent bg-clip-text'>

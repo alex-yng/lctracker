@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import Header from "@/components/home/Header";
 import { ThemeProvider } from "@/components/theme-provider";
 import ModeToggle from "@/components/ModeToggle";
+import MobileHeader from "@/components/home/MobileHeader";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
+          <MobileHeader />
           {children}
           <div className='fixed bottom-5 right-5'>
             <ModeToggle />

@@ -5,7 +5,7 @@ import { headerLinks as Links } from "@/const";
 
 const Header = () => {
   return (
-    <header className='fixed w-full py-4 px-8 md:px-12 lg:px-16'>
+    <header className='hidden md:grid fixed w-full py-4 px-8 md:px-12 lg:px-16'>
       <div className='bg-background flex justify-between items-center tracking-wider'>
         <Link href='/'>
           <strong>NAME</strong>
