@@ -25,7 +25,7 @@ const Home = () => {
 
   return (
     <main className='w-full min-h-screen grid place-content-center py-4 px-8 md:px-12 lg:px-16'>
-      <section className='hero m-32 grid grid-cols-2'>
+      <section className='hero m-32 grid grid-cols-2 place-items-center'>
         <div className='flex flex-col gap-4 w-full max-w-[65%]'>
           <h1 className='text-6xl font-bold'>Welcome to NAME</h1>
           <p className='text-3xl text-primary-dim leading-relaxed'>
@@ -48,15 +48,15 @@ const Home = () => {
             of your progress.
           </p>
         </div>
-        <div className='w-full h-full grid grid-cols-2 p-4 place-items-center'>
-          <div className='col-span-2 flex gap-2 justify-self-start'>
+        <div className='w-4/5 h-full flex flex-col justify-center p-4'>
+          <div className='flex gap-2 justify-self-start mb-4'>
             <Input
               placeholder='Enter your username'
               onChange={(e) => setUsername(e.target.value)}
             />
             <Button onClick={previewStats}>Preview</Button>
           </div>
-          <div className='flex flex-col gap-4 w-full'>
+          <div className='flex flex-col gap-4 w-full px-2'>
             <h1 className='text-4xl'>{userData.userName}</h1>
             <div className='flex flex-col gap-2'>
               <p>Easys: {userData.easySolved}</p>
