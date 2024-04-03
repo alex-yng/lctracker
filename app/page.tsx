@@ -31,15 +31,19 @@ const Home = () => {
 
   return (
     <main className='w-full min-h-screen grid place-content-center py-4 px-8 md:px-12 lg:px-16'>
-      <section className='hero m-32 grid grid-cols-2 place-items-center'>
-        <div className='flex flex-col gap-4 w-full max-w-[65%]'>
-          <h1 className='text-6xl font-bold'>Welcome to NAME</h1>
-          <p className='text-3xl text-primary-dim leading-relaxed'>
-            Improve your Leetcode skills
+      <section className='hero m-8 md:m-16 lg:m-24 xl:m-32 grid lg:grid-cols-2 gap-8 place-items-center'>
+        <div className='flex flex-col gap-4 lg:gap-0 w-full max-w-[65%]'>
+          <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold'>
+            <strong className='bg-gradient-to-r from-blue-400 to-violet-400 dark:from-blue-600 dark:to-violet-600 inline-block text-transparent bg-clip-text'>
+              Improve faster
+            </strong>
+          </h1>
+          <p className='sm:text-xl md:text-2xl lg:text-3xl text-primary-dim leading-relaxed'>
+            advance your Leetcode skills
             <em>
               <strong className='text-primary'> faster </strong>
             </em>
-            with intuitive
+            with efficient
             <em>
               <strong className='text-primary'> tracking</strong>
             </em>
@@ -55,19 +59,29 @@ const Home = () => {
           </p>
         </div>
         <div className='w-4/5 h-full flex flex-col justify-center gap-4 p-4'>
-          <h1 className='font-semibold text-lg'>preview your LC progress</h1>
+          <h1 className='font-semibold text-lg text-center lg:text-start'>
+            preview your LC progress
+          </h1>
           <div className='flex gap-2 justify-self-start'>
             <Input
               placeholder='username'
               onChange={(e) => setUsername(e.target.value)}
             />
             {loading ? (
-              <Button disabled>
+              <Button
+                disabled
+                className='bg-gradient-to-r from-violet-300 to-blue-400 dark:from-violet-500 dark:to-blue-500'
+              >
                 <ReloadIcon className='mr-2 h-4 w-4 animate-spin' />
                 Please wait
               </Button>
             ) : (
-              <Button onClick={previewStats}>Preview</Button>
+              <Button
+                onClick={previewStats}
+                className='bg-gradient-to-r from-violet-300 to-blue-400 dark:from-violet-500 dark:to-blue-500'
+              >
+                Preview
+              </Button>
             )}
           </div>
           {loading ? (
@@ -83,7 +97,7 @@ const Home = () => {
           ) : (
             <>
               <div className='flex flex-col gap-4 w-full px-2'>
-                <h1 className='text-4xl'>
+                <h1 className='text-xl md:text-2xl lg:text-4xl'>
                   {username === "alicks111"
                     ? "alex :)"
                     : `${userData.userName}`}

@@ -7,7 +7,9 @@ const Header = () => {
   return (
     <header className='fixed w-full py-4 px-8 md:px-12 lg:px-16'>
       <div className='bg-background flex justify-between items-center tracking-wider'>
-        <Link href='/'>NAME</Link>
+        <Link href='/'>
+          <strong>NAME</strong>
+        </Link>
         <nav>
           <ul className='flex gap-8 md:gap-12 lg:gap-16 items-center'>
             {Links.map((link) => (

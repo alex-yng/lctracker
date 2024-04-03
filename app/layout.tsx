@@ -5,6 +5,7 @@ import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Header from "@/components/home/Header";
 import { ThemeProvider } from "@/components/theme-provider";
+import ModeToggle from "@/components/ModeToggle";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -37,6 +38,9 @@ export default function RootLayout({
         >
           <Header />
           {children}
+          <div className='fixed bottom-5 right-5'>
+            <ModeToggle />
+          </div>
         </ThemeProvider>
       </body>
     </html>
