@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+  /* zinc */
+  /* :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
 
@@ -63,6 +64,54 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
+  } */
+
+  /* bluesilver */
+  :root {
+    --background: 208 100% 95%;
+    --foreground: 208 5% 0%;
+    --card: 208 50% 90%;
+    --card-foreground: 208 5% 10%;
+    --popover: 208 100% 95%;
+    --popover-foreground: 208 100% 0%;
+    --primary: 208 26% 38%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dim: 208 26% 28%;
+    --secondary: 208 30% 70%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 170 30% 85%;
+    --muted-foreground: 208 5% 35%;
+    --accent: 170 30% 80%;
+    --accent-foreground: 208 5% 10%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 208 5% 90%;
+    --border: 208 30% 50%;
+    --input: 208 30% 18%;
+    --ring: 208 26% 38%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 208 50% 5%;
+    --foreground: 208 5% 90%;
+    --card: 208 50% 0%;
+    --card-foreground: 208 5% 90%;
+    --popover: 208 50% 5%;
+    --popover-foreground: 208 5% 90%;
+    --primary: 208 26% 38%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dim: 208 26% 28%;
+    --secondary: 208 30% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 170 30% 15%;
+    --muted-foreground: 208 5% 60%;
+    --accent: 170 30% 15%;
+    --accent-foreground: 208 5% 90%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 208 5% 90%;
+    --border: 208 30% 18%;
+    --input: 208 30% 18%;
+    --ring: 208 26% 38%;
+    --radius: 0.5rem;
   }
 }
 

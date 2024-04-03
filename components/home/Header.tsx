@@ -2,13 +2,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import NavLink from "@/components/home/NavLink";
 import { headerLinks as Links } from "@/const";
-import ModeToggle from "@/components/ModeToggle";
 
 const Header = () => {
   return (
     <header className='fixed w-full py-4 px-8 md:px-12 lg:px-16'>
       <div className='bg-background flex justify-between items-center tracking-wider'>
-        <h1 className='font-semibold'>KIWI</h1>
+        <h1 className='font-semibold'>NAME</h1>
         <nav>
           <ul className='flex gap-8 md:gap-12 lg:gap-16 items-center'>
             {Links.map((link) => (
@@ -17,9 +16,9 @@ const Header = () => {
             <li>
               <Button
                 variant='outline'
-                className='hover:scale-105 transition-transform duration-300 border-primary font-bold'
+                className='hover:scale-105 transition-transform duration-300 font-bold'
               >
-                Join Now
+                get started
               </Button>
             </li>
           </ul>
