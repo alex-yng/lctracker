@@ -1,5 +1,5 @@
 export const headerLinks = [
-  { href: "#motive", name: "motive" },
+  { href: "#mission", name: "mission" },
   { href: "#features", name: "features" },
 ];
 

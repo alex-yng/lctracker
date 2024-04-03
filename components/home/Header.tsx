@@ -5,8 +5,8 @@ import { headerLinks as Links } from "@/const";
 
 const Header = () => {
   return (
-    <header className='hidden md:grid fixed w-full py-4 px-8 md:px-12 lg:px-16'>
-      <div className='bg-background flex justify-between items-center tracking-wider'>
+    <header className='hidden md:grid fixed w-full py-4 px-8 md:px-12 lg:px-16 z-50 backdrop-blur-sm border-b border-primary'>
+      <div className='flex justify-between items-center tracking-wider'>
         <Link href='/'>
           <strong>NAME</strong>
         </Link>
@@ -23,7 +23,6 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <hr className='border-t border-primary mt-4' />
     </header>
   );
 };

@@ -19,14 +19,14 @@ const MobileHeader = () => {
   const [isOpen, setOpen] = useState(false);
 
   return (
-    <header className='grid md:hidden fixed w-full py-4 px-8'>
-      <div className='bg-background flex justify-between items-center tracking-wider'>
+    <header className='grid md:hidden fixed w-full py-2 px-4 backdrop-blur-sm border-b border-primary'>
+      <div className='flex justify-between items-center tracking-wider'>
         <Link href='/'>
-          <strong>NAME</strong>
+          <strong>Name</strong>
         </Link>
         <Sheet>
           <SheetTrigger>
-            <Hamburger toggled={isOpen} toggle={setOpen} />
+            <Hamburger toggled={isOpen} toggle={setOpen} size={20} />
           </SheetTrigger>
           <SheetContent side='right'>
             <SheetHeader>
@@ -55,7 +55,6 @@ const MobileHeader = () => {
           </SheetContent>
         </Sheet>
       </div>
-      <hr className='border-t border-primary mt-4' />
     </header>
   );
 };
