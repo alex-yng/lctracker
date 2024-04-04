@@ -1,6 +1,6 @@
 export const headerLinks = [
-  { href: "#mission", name: "mission" },
   { href: "#features", name: "features" },
+  { href: "#mission", name: "mission" },
 ];
 
 export type userData = {

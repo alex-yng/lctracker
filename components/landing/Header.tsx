@@ -5,22 +5,22 @@ import { headerLinks as Links } from "@/const";
 
 const Header = () => {
   return (
-    <header className='hidden md:grid fixed w-full py-4 px-8 md:px-12 lg:px-16 z-50 backdrop-blur-sm opacity-90 bg-background border-b border-primary'>
-      <div className='flex justify-between items-center tracking-wider'>
-        <Link href='/'>
+    <header className="fixed z-50 hidden w-full border-b border-primary bg-background px-8 py-4 opacity-90 backdrop-blur-sm md:grid md:px-12 lg:px-16">
+      <div className="flex items-center justify-between tracking-wider">
+        <Link href="/">
           <strong>NAME</strong>
         </Link>
         <nav>
-          <ul className='flex gap-8 md:gap-12 lg:gap-16 items-center'>
+          <ul className="flex items-center gap-8 md:gap-12 lg:gap-16">
             {Links.map((link) => (
               <NavLink key={link.name} name={link.name} href={link.href} />
             ))}
             <li>
               <Button
-                className='hover:scale-105 transition-transform duration-300 font-bold bg-gradient-to-tr from-blue-400 to-purple-300 dark:from-blue-600 dark:to-purple-500'
+                className="bg-gradient-to-tr from-blue-400 to-purple-300 font-bold transition-transform duration-300 hover:scale-105 dark:from-blue-600 dark:to-purple-500"
                 asChild
               >
-                <Link href='/sign-up'>get started</Link>
+                <Link href="/sign-up">get started</Link>
               </Button>
             </li>
           </ul>

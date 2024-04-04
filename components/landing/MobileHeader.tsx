@@ -19,23 +19,23 @@ const MobileHeader = () => {
   const [isOpen, setOpen] = useState(false);
 
   return (
-    <header className='grid md:hidden fixed w-full py-2 px-4 backdrop-blur-sm border-b border-primary'>
-      <div className='flex justify-between items-center tracking-wider'>
-        <Link href='/'>
+    <header className="fixed grid w-full border-b border-primary px-4 py-2 backdrop-blur-sm md:hidden">
+      <div className="flex items-center justify-between tracking-wider">
+        <Link href="/">
           <strong>Name</strong>
         </Link>
         <Sheet>
           <SheetTrigger>
             <Hamburger toggled={isOpen} toggle={setOpen} size={20} />
           </SheetTrigger>
-          <SheetContent side='right'>
+          <SheetContent side="right">
             <SheetHeader>
               <SheetTitle>
                 <strong>NAME</strong>
               </SheetTitle>
               <SheetDescription>
-                <nav className='text-2xl mt-16'>
-                  <ul className='flex flex-col gap-8 justify-center items-center'>
+                <nav className="mt-16 text-2xl">
+                  <ul className="flex flex-col items-center justify-center gap-8">
                     {Links.map((link) => (
                       <NavLink
                         key={link.name}
@@ -45,10 +45,10 @@ const MobileHeader = () => {
                     ))}
                     <li>
                       <Button
-                        className='hover:scale-105 transition-transform duration-300 font-bold bg-gradient-to-tr from-blue-400 to-purple-300 dark:from-blue-600 dark:to-purple-500'
+                        className="bg-gradient-to-tr from-blue-400 to-purple-300 font-bold transition-transform duration-300 hover:scale-105 dark:from-blue-600 dark:to-purple-500"
                         asChild
                       >
-                        <Link href='/sign-up'>get started</Link>
+                        <Link href="/sign-up">get started</Link>
                       </Button>
                     </li>
                   </ul>
