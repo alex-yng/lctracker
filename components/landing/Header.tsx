@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import NavLink from "@/components/home/NavLink";
+import NavLink from "@/components/landing/NavLink";
 import { headerLinks as Links } from "@/const";
 
 const Header = () => {
   return (
-    <header className='hidden md:grid fixed w-full py-4 px-8 md:px-12 lg:px-16 z-50 backdrop-blur-sm border-b border-primary'>
+    <header className='hidden md:grid fixed w-full py-4 px-8 md:px-12 lg:px-16 z-50 backdrop-blur-sm opacity-90 bg-background border-b border-primary'>
       <div className='flex justify-between items-center tracking-wider'>
         <Link href='/'>
           <strong>NAME</strong>

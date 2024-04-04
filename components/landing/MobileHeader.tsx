@@ -13,7 +13,7 @@ import Hamburger from "hamburger-react";
 import { headerLinks as Links } from "@/const";
 import { useState } from "react";
 import { Button } from "../ui/button";
-import NavLink from "@/components/home/NavLink";
+import NavLink from "@/components/landing/NavLink";
 
 const MobileHeader = () => {
   const [isOpen, setOpen] = useState(false);
@@ -44,8 +44,11 @@ const MobileHeader = () => {
                       />
                     ))}
                     <li>
-                      <Button className='hover:scale-105 transition-transform duration-300 font-bold bg-gradient-to-tr from-blue-400 to-purple-300 dark:from-blue-600 dark:to-purple-500'>
-                        get started
+                      <Button
+                        className='hover:scale-105 transition-transform duration-300 font-bold bg-gradient-to-tr from-blue-400 to-purple-300 dark:from-blue-600 dark:to-purple-500'
+                        asChild
+                      >
+                        <Link href='/sign-up'>get started</Link>
                       </Button>
                     </li>
                   </ul>

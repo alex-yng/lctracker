@@ -3,10 +3,7 @@ import "./globals.css";
 import "@/app/globals.css";
 import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
-import Header from "@/components/home/Header";
 import { ThemeProvider } from "@/components/theme-provider";
-import ModeToggle from "@/components/ModeToggle";
-import MobileHeader from "@/components/home/MobileHeader";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 
@@ -44,12 +41,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Header />
-            <MobileHeader />
             {children}
-            <div className='fixed bottom-5 right-5'>
-              <ModeToggle />
-            </div>
           </ThemeProvider>
         </body>
       </html>

@@ -8,6 +8,7 @@ import { userData } from "@/const";
 import fetchStats from "@/lib/fetchStats";
 import { ReloadIcon } from "@radix-ui/react-icons";
 import { useEffect, useState } from "react";
+import AuroraBackground from "./AuroraBackground";
 
 const Hero = () => {
   const [username, setUsername] = useState("alicks111");
