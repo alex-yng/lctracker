@@ -1,7 +1,9 @@
+import RecentCompletion from "@/components/dashboard/RecentCompletion";
+
 const Dashboard = () => {
   return (
     <div>
-      <div></div>
+      <RecentCompletion />
     </div>
   );
 };
