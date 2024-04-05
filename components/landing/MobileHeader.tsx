@@ -19,7 +19,7 @@ const MobileHeader = () => {
   const [isOpen, setOpen] = useState(false);
 
   return (
-    <header className="fixed grid w-full border-b border-primary px-4 py-2 backdrop-blur-sm md:hidden">
+    <header className="fixed grid w-full border-b border-primary px-4 py-2 backdrop-blur-md md:hidden">
       <div className="flex items-center justify-between tracking-wider">
         <Link href="/">
           <strong>Name</strong>
