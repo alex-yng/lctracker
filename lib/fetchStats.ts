@@ -1,6 +1,6 @@
 import { userData } from "@/const";
 
-const fetchProfile = async (username: string) => {
+export const fetchProfile = async (username: string) => {
   try {
     const response = await fetch(`http://localhost:3001/${username}/solved`);
     const data = await response.json();
@@ -55,5 +55,3 @@ export const fetchRecentSub = async (username: string, limit: number) => {
 //     return [];
 //   }
 // };
-
-export default fetchProfile;

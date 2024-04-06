@@ -7,9 +7,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { userData } from "@/const";
-import fetchProfile from "@/lib/fetchStats";
+import { fetchProfile } from "@/lib/fetchStats";
 import { Progress } from "@/components/ui/progress";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils";
 
 const Profile = async ({
   username,

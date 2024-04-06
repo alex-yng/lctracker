@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/table";
 import RecentRow from "@/components/dashboard/RecentRow";
 import { recentSubmissions } from "@/const";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils";
 
 const RecentSubmissions = async ({
   username,
