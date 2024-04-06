@@ -5,10 +5,9 @@ import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { Skeleton } from "@/components/ui/skeleton";
 import { userData } from "@/const";
-import fetchStats from "@/lib/fetchStats";
+import fetchProfile from "@/lib/fetchStats";
 import { ReloadIcon } from "@radix-ui/react-icons";
 import { useEffect, useState } from "react";
-import AuroraBackground from "./AuroraBackground";
 
 const Hero = () => {
   const [username, setUsername] = useState("alicks111");
@@ -18,7 +17,7 @@ const Hero = () => {
   const previewStats = async () => {
     setLoading(true);
     try {
-      let data = await fetchStats(username);
+      let data = await fetchProfile(username);
       setUserData(data);
     } catch (error) {
       console.error(error);

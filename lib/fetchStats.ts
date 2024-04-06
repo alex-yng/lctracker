@@ -1,6 +1,6 @@
 import { userData } from "@/const";
 
-const fetchStats = async (username: string) => {
+const fetchProfile = async (username: string) => {
   try {
     const response = await fetch(
       `https://leetcode-stats-api.herokuapp.com/${username}`,
@@ -58,4 +58,4 @@ export const fetchRecentAC = async (username: string, limit: number) => {
 //   }
 // };
 
-export default fetchStats;
+export default fetchProfile;

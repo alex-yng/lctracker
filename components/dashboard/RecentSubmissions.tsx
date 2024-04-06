@@ -21,43 +21,41 @@ const RecentSubmissions = async ({ username }: { username: string }) => {
   const submissions = await recentAC.submission;
 
   return (
-    <div>
-      <Card>
-        <CardHeader>
-          <CardTitle>Recently Solved</CardTitle>
-          <CardDescription>
-            Your past 5 AC (accepted code) submissions
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead className="">Status</TableHead>
-                <TableHead>Problem</TableHead>
-                <TableHead className="text-right">Time Submitted</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {submissions.map((submission) => {
-                return (
-                  <RecentRow
-                    key={submission.timestamp}
-                    status={
-                      submission.statusDisplay === "Wrong Answer"
-                        ? "Incorrect"
-                        : "Accepted"
-                    }
-                    problem={submission.title}
-                    time={submission.timestamp}
-                  />
-                );
-              })}
-            </TableBody>
-          </Table>
-        </CardContent>
-      </Card>
-    </div>
+    <Card className="col-span-2">
+      <CardHeader>
+        <CardTitle>Recent Submissions</CardTitle>
+        <CardDescription>
+          Your past 5 AC (accepted code) submissions
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="">Status</TableHead>
+              <TableHead>Problem</TableHead>
+              <TableHead className="text-right">Time Submitted</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {submissions.map((submission) => {
+              return (
+                <RecentRow
+                  key={submission.timestamp}
+                  status={
+                    submission.statusDisplay === "Wrong Answer"
+                      ? "Incorrect"
+                      : "Accepted"
+                  }
+                  problem={submission.title}
+                  time={submission.timestamp}
+                />
+              );
+            })}
+          </TableBody>
+        </Table>
+      </CardContent>
+    </Card>
   );
 };
 
