@@ -14,7 +14,7 @@ const Profile = async ({ username }: { username: string }) => {
   const data: userData = await fetchProfile(username);
 
   return (
-    <Card className="transition-transform duration-300 hover:scale-[102%]">
+    <Card className="transition-all duration-300 hover:scale-[102%]">
       <CardHeader>
         <CardTitle>
           {username === "alicks111" ? "Hello alex :)" : `Hello ${username}!`}
@@ -28,7 +28,7 @@ const Profile = async ({ username }: { username: string }) => {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="items-around flex h-full flex-col justify-around border">
+        <div className="flex h-full flex-col justify-around">
           <div className="flex flex-col gap-2">
             <p>Easys: {data.easySolved}</p>
             <Progress
@@ -52,6 +52,14 @@ const Profile = async ({ username }: { username: string }) => {
           </div>
         </div>
       </CardContent>
+      <CardFooter>
+        <p>
+          You've solved {data.solvedProblem} problems. Nice!{" "}
+          <span role="img" aria-label="muscle">
+            💪
+          </span>
+        </p>
+      </CardFooter>
     </Card>
   );
 };
