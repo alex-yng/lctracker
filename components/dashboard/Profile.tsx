@@ -66,7 +66,7 @@ const Profile = async ({
       </CardContent>
       <CardFooter>
         <p>
-          You've solved {data.solvedProblem} problems. Nice!{" "}
+          You have solved {data.solvedProblem} problems. Nice!{" "}
           <span role="img" aria-label="muscle">
             💪
           </span>
