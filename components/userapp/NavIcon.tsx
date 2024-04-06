@@ -6,7 +6,7 @@ import {
   TooltipTrigger,
   TooltipContent,
 } from "@/components/ui/tooltip";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 
 const NavIcon = ({

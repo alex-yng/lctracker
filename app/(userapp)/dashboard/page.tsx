@@ -1,5 +1,6 @@
 "use client";
 
+import Daily from "@/components/dashboard/Daily";
 import Profile from "@/components/dashboard/Profile";
 import RecentSubmissions from "@/components/dashboard/RecentSubmissions";
 import { useState } from "react";
@@ -11,6 +12,7 @@ const Dashboard = () => {
     <main className="ml-16 grid gap-8 p-8 lg:grid-cols-3">
       <Profile username={username} className="lg:col-span-1" />
       <RecentSubmissions username={username} className="lg:col-span-2" />
+      <Daily />
     </main>
   );
 };

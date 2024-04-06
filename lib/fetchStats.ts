@@ -1,4 +1,4 @@
-import { userData } from "@/const";
+import { DailyQuestion, userData } from "@/const";
 
 export const fetchProfile = async (username: string) => {
   try {
@@ -21,6 +21,17 @@ export const fetchRecentSub = async (username: string, limit: number) => {
   } catch (error) {
     console.error(error);
     return [];
+  }
+};
+
+export const fetchDaiy = async () => {
+  try {
+    const response = await fetch(`http://localhost:3001/daily`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    return {} as DailyQuestion;
   }
 };
 
