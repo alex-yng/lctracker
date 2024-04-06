@@ -42,6 +42,7 @@ const RecentSubmissions = async ({ username }: { username: string }) => {
               {submissions.map((submission) => {
                 return (
                   <RecentRow
+                    key={submission.timestamp}
                     status={
                       submission.statusDisplay === "Wrong Answer"
                         ? "Incorrect"
