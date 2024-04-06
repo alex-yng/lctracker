@@ -9,7 +9,7 @@ const Dashboard = () => {
 
   return (
     <main className="ml-16 grid gap-8 p-6">
-      <Profile />
+      <Profile username={username} />
       <RecentSubmissions username={username} />
     </main>
   );
