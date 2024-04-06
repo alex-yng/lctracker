@@ -12,7 +12,7 @@ const Profile = async ({ username }: { username: string }) => {
   const data = await fetchProfile(username);
 
   return (
-    <Card className="">
+    <Card className="transition-transform duration-300 hover:scale-[102%]">
       <CardHeader>
         <CardTitle>
           <h1 className="text-xl md:text-2xl lg:text-4xl">

@@ -1,23 +1,34 @@
+"use client";
+
 import {
   TooltipProvider,
   Tooltip,
   TooltipTrigger,
   TooltipContent,
 } from "@/components/ui/tooltip";
+import { cn } from "@/utils/cn";
+import { usePathname } from "next/navigation";
 
 const NavIcon = ({
   children,
   text,
+  href,
 }: {
   children: React.ReactNode;
   text: string;
+  href?: string;
 }) => {
+  const pathname = usePathname();
+
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger
           asChild
-          className="rounded-full transition-colors duration-300 hover:bg-primary/30"
+          className={cn(
+            "rounded-full text-primary/70 transition-colors duration-300 hover:text-primary/90",
+            pathname === href && "text-primary",
+          )}
         >
           {children}
         </TooltipTrigger>

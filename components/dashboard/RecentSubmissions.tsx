@@ -21,7 +21,7 @@ const RecentSubmissions = async ({ username }: { username: string }) => {
   const submissions = await recentAC.submission;
 
   return (
-    <Card className="col-span-2">
+    <Card className="col-span-2 transition-transform duration-300 hover:scale-[102%]">
       <CardHeader>
         <CardTitle>Recent Submissions</CardTitle>
         <CardDescription>
