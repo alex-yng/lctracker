@@ -2,6 +2,7 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -13,12 +14,10 @@ const Profile = async ({ username }: { username: string }) => {
   const data: userData = await fetchProfile(username);
 
   return (
-    <Card className="size-96 transition-transform duration-300 hover:scale-[102%]">
+    <Card className="transition-transform duration-300 hover:scale-[102%]">
       <CardHeader>
         <CardTitle>
-          <h1 className="text-xl md:text-2xl lg:text-4xl">
-            {username === "alicks111" ? "Hello alex :)" : `Hello ${username}!`}
-          </h1>
+          {username === "alicks111" ? "Hello alex :)" : `Hello ${username}!`}
         </CardTitle>
         <CardDescription>
           {data.solvedProblem === 0
@@ -29,10 +28,7 @@ const Profile = async ({ username }: { username: string }) => {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="flex w-full flex-col gap-4 px-2">
-          <h1 className="text-xl md:text-2xl lg:text-4xl">
-            {username === "alicks111" ? "alex :)" : `${data.userName}`}
-          </h1>
+        <div className="items-around flex h-full flex-col justify-around border">
           <div className="flex flex-col gap-2">
             <p>Easys: {data.easySolved}</p>
             <Progress
