@@ -43,7 +43,7 @@ export function SettingsDialogue({ setUsername }: { setUsername?: any }) {
           <DialogHeader>
             <DialogTitle>Set Leetcode Username</DialogTitle>
             <DialogDescription>
-              Set Leetcode username to gather stats for. Click save when you're
+              Set Leetcode username to gather stats for. Click save when you are
               done.
             </DialogDescription>
           </DialogHeader>
