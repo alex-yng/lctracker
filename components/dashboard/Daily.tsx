@@ -48,10 +48,10 @@ const Daily = async ({ className = "" }: { className?: string }) => {
         </CardContent>
         <CardFooter className="flex gap-5">
           <div className="flex gap-2">
-            <ThumbsUp size={24} /> {daily.likes}
+            <ThumbsUp size={20} /> {daily.likes}
           </div>
           <div className="flex gap-2">
-            <ThumbsDown size={24} /> {daily.dislikes}
+            <ThumbsDown size={20} /> {daily.dislikes}
           </div>
         </CardFooter>
       </Card>

@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { Skeleton } from "@/components/ui/skeleton";
 import { userData } from "@/const";
-import fetchProfile from "@/lib/fetchStats";
+import { fetchProfile } from "@/lib/fetchStats";
 import { ReloadIcon } from "@radix-ui/react-icons";
 import { useEffect, useState } from "react";
 
