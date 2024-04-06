@@ -4,7 +4,7 @@
 
 @layer base {
   /* zinc */
-  /* :root {
+  :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
 
@@ -64,10 +64,11 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
-  } */
+  }
+}
 
-  /* bluesilver */
-  :root {
+/* bluesilver */
+/* :root {
     --background: 208 100% 95%;
     --foreground: 208 5% 0%;
     --card: 208 50% 90%;
@@ -113,7 +114,7 @@
     --ring: 208 26% 38%;
     --radius: 0.5rem;
   }
-}
+} */
 
 @layer base {
   * {

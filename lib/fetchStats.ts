@@ -14,28 +14,9 @@ const fetchStats = async (username: string) => {
 };
 
 export const fetchRecentAC = async (username: string, limit: number) => {
-  const graphqlQuery = JSON.stringify({
-    query: `query recentAcSubmissions($username: String!, $limit: Int!) {
-      recentAcSubmissionList(username: $username, limit: $limit) {
-        id
-        title
-        titleSlug
-        timestamp
-      }
-    }`,
-    variables: { username: `${username}, limit: ${limit}` },
-  });
-
-  const requestOptions = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: graphqlQuery,
-  };
-
   try {
     const response = await fetch(
-      "https://leetcode-stats-api.herokuapp.com/graphql",
-      requestOptions,
+      `http://localhost:3001/${username}/acSubmission?limit=${limit}`,
     );
     const data = await response.json();
     return data;
@@ -44,5 +25,37 @@ export const fetchRecentAC = async (username: string, limit: number) => {
     return [];
   }
 };
+
+// export const fetchRecentAC = async (username: string, limit: number) => {
+//   const graphqlQuery = JSON.stringify({
+//     query: `query recentAcSubmissions($username: String!, $limit: Int!) {
+//       recentAcSubmissionList(username: $username, limit: $limit) {
+//         id
+//         title
+//         titleSlug
+//         timestamp
+//       }
+//     }`,
+//     variables: { username: `${username}, limit: ${limit}` },
+//   });
+
+//   const requestOptions = {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: graphqlQuery,
+//   };
+
+//   try {
+//     const response = await fetch(
+//       "https://leetcode.com/graphql",
+//       requestOptions,
+//     );
+//     const data = await response.json();
+//     return data;
+//   } catch (error) {
+//     console.error(error);
+//     return [];
+//   }
+// };
 
 export default fetchStats;

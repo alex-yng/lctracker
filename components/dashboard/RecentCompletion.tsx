@@ -1,19 +1,28 @@
-"use client";
-
 import { fetchRecentAC } from "@/lib/fetchStats";
-import { Button } from "../ui/button";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 
 const RecentCompletion = async () => {
   return (
     <div>
-      <Button
-        onClick={async () => {
-          const data = await fetchRecentAC("alicks111", 5);
-          console.log(data);
-        }}
-      >
-        Test Fetch
-      </Button>
+      <Card>
+        <CardHeader>
+          <CardTitle>Card Title</CardTitle>
+          <CardDescription>Card Description</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p>Card Content</p>
+        </CardContent>
+        <CardFooter>
+          <p>Card Footer</p>
+        </CardFooter>
+      </Card>
     </div>
   );
 };
