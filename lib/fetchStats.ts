@@ -2,18 +2,16 @@ import { userData } from "@/const";
 
 const fetchProfile = async (username: string) => {
   try {
-    const response = await fetch(
-      `https://leetcode-stats-api.herokuapp.com/${username}`,
-    );
+    const response = await fetch(`http://localhost:3001/${username}/solved`);
     const data = await response.json();
-    return { ...data, userName: username };
+    return { ...data, username: username };
   } catch (error) {
     console.error(error);
     return {} as userData;
   }
 };
 
-export const fetchRecentAC = async (username: string, limit: number) => {
+export const fetchRecentSub = async (username: string, limit: number) => {
   try {
     const response = await fetch(
       `http://localhost:3001/${username}/submission?limit=${limit}`,

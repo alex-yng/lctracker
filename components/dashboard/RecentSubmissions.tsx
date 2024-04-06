@@ -1,4 +1,4 @@
-import { fetchRecentAC } from "@/lib/fetchStats";
+import { fetchRecentSub } from "@/lib/fetchStats";
 import {
   Card,
   CardHeader,
@@ -17,8 +17,8 @@ import RecentRow from "@/components/dashboard/RecentRow";
 import { recentSubmissions } from "@/const";
 
 const RecentSubmissions = async ({ username }: { username: string }) => {
-  const recentAC: recentSubmissions = await fetchRecentAC(username, 5);
-  const submissions = await recentAC.submission;
+  const recentAC: recentSubmissions = await fetchRecentSub(username, 5);
+  const submissions = recentAC.submission;
 
   return (
     <Card className="col-span-2 transition-transform duration-300 hover:scale-[102%]">

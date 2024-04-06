@@ -102,21 +102,31 @@ const Hero = () => {
               <div className="flex flex-col gap-2">
                 <p>Easys: {userData.easySolved}</p>
                 <Progress
-                  value={(userData.easySolved / userData.totalEasy) * 100}
+                  value={
+                    (userData.easySolved / userData.acSubmissionNum[1].count) *
+                    100
+                  }
                   indicatorColor="bg-gradient-to-r from-green-500 to-green-300"
                 />
               </div>
               <div className="flex flex-col gap-2">
                 <p>Mediums: {userData.mediumSolved}</p>
                 <Progress
-                  value={(userData.mediumSolved / userData.totalMedium) * 100}
+                  value={
+                    (userData.mediumSolved /
+                      userData.acSubmissionNum[2].count) *
+                    100
+                  }
                   indicatorColor="bg-gradient-to-r from-amber-500 to-amber-300"
                 />
               </div>
               <div className="flex flex-col gap-2">
                 <p>Hards: {userData.hardSolved} </p>
                 <Progress
-                  value={(userData.hardSolved / userData.totalHard) * 100}
+                  value={
+                    (userData.hardSolved / userData.acSubmissionNum[3].count) *
+                    100
+                  }
                   indicatorColor="bg-gradient-to-r from-rose-600 to-rose-400"
                 />
               </div>

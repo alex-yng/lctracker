@@ -5,19 +5,18 @@ export const headerLinks = [
 
 export type userData = {
   userName: string;
-  totalSolved: number;
-  totalQuestions: number;
+  solvedProblem: number;
   easySolved: number;
-  totalEasy: number;
   mediumSolved: number;
-  totalMedium: number;
   hardSolved: number;
-  totalHard: number;
-  acceptanceRate: number;
-  ranking: number;
-  contributionPoints: number;
-  reputation: number;
-  submissionCalendar: any;
+  totalSubmissionNum: problemsSolved[];
+  acSubmissionNum: problemsSolved[];
+};
+
+export type problemsSolved = {
+  difficulty: string;
+  count: number;
+  submissions: number;
 };
 
 export type submission = {
