@@ -20,7 +20,7 @@ const Header = () => {
                 className="bg-gradient-to-tr from-blue-400 to-purple-300 font-bold transition-transform duration-300 hover:scale-105 dark:from-blue-600 dark:to-purple-500"
                 asChild
               >
-                <Link href="/sign-up">get started</Link>
+                <Link href="/dashboard">get started</Link>
               </Button>
             </li>
           </ul>

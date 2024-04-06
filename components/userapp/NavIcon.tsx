@@ -5,15 +5,24 @@ import {
   TooltipContent,
 } from "@/components/ui/tooltip";
 
-const NavIcon = ({ children, asChild }: { children: React.ReactNode, asChild?: boolean }) => {
+const NavIcon = ({
+  children,
+  text,
+}: {
+  children: React.ReactNode;
+  text: string;
+}) => {
   return (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger {asChild ? 'asChild' : ''} className="rounded-full transition-colors duration-300 hover:bg-primary/30">
+        <TooltipTrigger
+          asChild
+          className="rounded-full transition-colors duration-300 hover:bg-primary/30"
+        >
           {children}
         </TooltipTrigger>
         <TooltipContent side="right" sideOffset={15}>
-          <p>Profile</p>
+          <p>{text}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

@@ -16,7 +16,7 @@ const fetchStats = async (username: string) => {
 export const fetchRecentAC = async (username: string, limit: number) => {
   try {
     const response = await fetch(
-      `http://localhost:3001/${username}/acSubmission?limit=${limit}`,
+      `http://localhost:3001/${username}/submission?limit=${limit}`,
     );
     const data = await response.json();
     return data;

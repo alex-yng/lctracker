@@ -1,10 +1,17 @@
-import RecentCompletion from "@/components/dashboard/RecentCompletion";
+"use client";
+
+import Profile from "@/components/dashboard/Profile";
+import RecentSubmissions from "@/components/dashboard/RecentSubmissions";
+import { useState } from "react";
 
 const Dashboard = () => {
+  const [username, setUsername] = useState("alicks111");
+
   return (
-    <div>
-      <RecentCompletion />
-    </div>
+    <main className="ml-16 grid gap-8 p-6">
+      <Profile />
+      <RecentSubmissions username={username} />
+    </main>
   );
 };
 
