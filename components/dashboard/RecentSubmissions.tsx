@@ -15,13 +15,25 @@ import {
 } from "@/components/ui/table";
 import RecentRow from "@/components/dashboard/RecentRow";
 import { recentSubmissions } from "@/const";
+import { cn } from "@/utils/cn";
 
-const RecentSubmissions = async ({ username }: { username: string }) => {
+const RecentSubmissions = async ({
+  username,
+  className = "",
+}: {
+  username: string;
+  className?: string;
+}) => {
   const recentAC: recentSubmissions = await fetchRecentSub(username, 5);
   const submissions = recentAC.submission;
 
   return (
-    <Card className="col-span-2 transition-all duration-300 hover:scale-[102%]">
+    <Card
+      className={cn(
+        "transition-all duration-300 hover:scale-[102%]",
+        className,
+      )}
+    >
       <CardHeader>
         <CardTitle>Recent Submissions</CardTitle>
         <CardDescription>

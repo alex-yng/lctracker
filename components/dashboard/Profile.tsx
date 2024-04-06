@@ -9,12 +9,24 @@ import {
 import { userData } from "@/const";
 import fetchProfile from "@/lib/fetchStats";
 import { Progress } from "@/components/ui/progress";
+import { cn } from "@/utils/cn";
 
-const Profile = async ({ username }: { username: string }) => {
+const Profile = async ({
+  username,
+  className = "",
+}: {
+  username: string;
+  className?: string;
+}) => {
   const data: userData = await fetchProfile(username);
 
   return (
-    <Card className="transition-all duration-300 hover:scale-[102%]">
+    <Card
+      className={cn(
+        "w-full transition-all duration-300 hover:scale-[102%]",
+        className,
+      )}
+    >
       <CardHeader>
         <CardTitle>
           {username === "alicks111" ? "Hello alex :)" : `Hello ${username}!`}

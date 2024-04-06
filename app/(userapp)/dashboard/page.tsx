@@ -10,7 +10,7 @@ const Dashboard = () => {
   return (
     <main className="ml-16 grid gap-8 p-8 lg:grid-cols-3">
       <Profile username={username} />
-      <RecentSubmissions username={username} />
+      <RecentSubmissions username={username} className="lg:col-span-2" />
     </main>
   );
 };
