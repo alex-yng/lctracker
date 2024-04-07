@@ -75,3 +75,10 @@ export type SimilarQuestion = {
   difficulty: string;
   translatedTitle: string | null;
 };
+
+// Submission Calendar
+export type SubmissionCalendar = {
+  submissionCalendar: string;
+};
+
+export type Submission = Record<number, number>;

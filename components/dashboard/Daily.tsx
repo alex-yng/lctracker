@@ -15,13 +15,15 @@ import { ThumbsUp, ThumbsDown } from "lucide-react";
 const Daily = async ({ className = "" }: { className?: string }) => {
   const daily: DailyQuestion = await fetchDaiy();
   return (
-    <Link href={daily.questionLink} target="_blank">
-      <Card
-        className={cn(
-          "w-full transition-all duration-300 hover:scale-[102%]",
-          className,
-        )}
-      >
+    <Link
+      href={daily.questionLink}
+      target="_blank"
+      className={cn(
+        "w-full transition-all duration-300 hover:scale-[102%]",
+        className,
+      )}
+    >
+      <Card>
         <CardHeader>
           <CardTitle>Problem of the Day!</CardTitle>
           <CardDescription>{daily?.date}</CardDescription>
@@ -30,9 +32,9 @@ const Daily = async ({ className = "" }: { className?: string }) => {
           <h2 className="font-semibold">
             {daily.questionFrontendId}. {daily.questionTitle}
           </h2>
-          <div className="flex gap-3">
+          <div className="flex flex-wrap gap-3">
             <span
-              className={`rounded bg-muted px-2 py-1 text-sm text-primary ${daily.difficulty === "Easy" ? "text-green-500" : daily.difficulty === "Medium" ? "text-yellow-500" : "text-red-500"}`}
+              className={`rounded bg-muted px-2 py-1 text-sm text-primary ${daily.difficulty === "Easy" ? "text-green-500" : daily.difficulty === "Medium" ? "text-yellow-600 dark:text-yellow-400" : "text-red-500"}`}
             >
               {daily.difficulty}
             </span>

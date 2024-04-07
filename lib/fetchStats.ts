@@ -35,6 +35,17 @@ export const fetchDaiy = async () => {
   }
 };
 
+export const fetchCalendar = async (username: string) => {
+  try {
+    const response = await fetch(`http://localhost:3001/${username}/calendar`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+};
+
 // export const fetchRecentAC = async (username: string, limit: number) => {
 //   const graphqlQuery = JSON.stringify({
 //     query: `query recentAcSubmissions($username: String!, $limit: Int!) {

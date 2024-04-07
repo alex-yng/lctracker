@@ -5,11 +5,11 @@ import { LayoutDashboard, NotebookPen } from "lucide-react";
 import { UserButton } from "@clerk/nextjs";
 import NavIcon from "@/components/userapp/NavIcon";
 import ModeToggle from "@/components/ModeToggle";
-import { SettingsDialogue } from "@/components/dashboard/SettingsDialogue";
+import { SettingsDialogue } from "@/components/userapp/SettingsDialogue";
 
 const SideNav = () => {
   return (
-    <aside className="fixed flex h-screen w-16 flex-col items-center justify-between border-r border-muted bg-background px-2 py-4">
+    <aside className="fixed flex h-screen w-16 flex-col items-center justify-between border-r border-muted bg-background px-2 py-4 opacity-80">
       <div className="flex flex-col items-center justify-center gap-6 py-2">
         <NavIcon text="Dashboard" href="/dashboard">
           <Link href="/dashboard">

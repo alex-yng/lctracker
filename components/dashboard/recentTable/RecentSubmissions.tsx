@@ -5,6 +5,7 @@ import {
   CardTitle,
   CardDescription,
   CardContent,
+  CardFooter,
 } from "@/components/ui/card";
 import {
   Table,
@@ -13,9 +14,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import RecentRow from "@/components/dashboard/RecentRow";
+import RecentRow from "@/components/dashboard/recentTable/RecentRow";
 import { recentSubmissions } from "@/const";
 import { cn } from "@/lib/utils";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 const RecentSubmissions = async ({
   username,
@@ -24,8 +26,9 @@ const RecentSubmissions = async ({
   username: string;
   className?: string;
 }) => {
-  const recentAC: recentSubmissions = await fetchRecentSub(username, 5);
+  const recentAC: recentSubmissions = await fetchRecentSub(username, 7);
   const submissions = recentAC.submission;
+  const initialTime = Date.now() / 1000;
 
   return (
     <Card
@@ -36,9 +39,7 @@ const RecentSubmissions = async ({
     >
       <CardHeader>
         <CardTitle>Recent Submissions</CardTitle>
-        <CardDescription>
-          Your past 5 AC (accepted code) submissions
-        </CardDescription>
+        <CardDescription>Your past 7 submissions!</CardDescription>
       </CardHeader>
       <CardContent>
         <Table>
@@ -51,16 +52,37 @@ const RecentSubmissions = async ({
           </TableHeader>
           <TableBody>
             {submissions.map((submission) => {
+              const hours = Math.round(
+                (initialTime - Number(submission.timestamp)) / 3600,
+              );
               return (
                 <RecentRow
                   key={submission.timestamp}
                   status={
-                    submission.statusDisplay === "Wrong Answer"
-                      ? "Incorrect"
-                      : "Accepted"
+                    submission.statusDisplay === "Accepted"
+                      ? "Accepted"
+                      : submission.statusDisplay === "Wrong Answer"
+                        ? "Wrong Answer"
+                        : "Runtime error"
                   }
                   problem={submission.title}
-                  time={submission.timestamp}
+                  time={
+                    hours < 24
+                      ? `${hours} hours ago`
+                      : hours < 48
+                        ? "Yesterday"
+                        : hours < 72
+                          ? "2 days ago"
+                          : hours < 96
+                            ? "3 days ago"
+                            : hours < 120
+                              ? "4 days ago"
+                              : hours < 144
+                                ? "5 days ago"
+                                : hours < 168
+                                  ? "6 days ago"
+                                  : "Last Week"
+                  }
                 />
               );
             })}
