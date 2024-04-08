@@ -11,7 +11,11 @@ const RecentRow = ({
 }) => {
   return (
     <TableRow>
-      <TableCell className="font-medium">{status}</TableCell>
+      <TableCell
+        className={`font-medium ${status === "Accepted" ? "text-green-600 dark:text-green-400" : "text-red-500 dark:text-red-400"}`}
+      >
+        {status}
+      </TableCell>
       <TableCell>{problem}</TableCell>
       <TableCell className="text-right">{time}</TableCell>
     </TableRow>

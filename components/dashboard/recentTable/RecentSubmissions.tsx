@@ -68,23 +68,25 @@ const RecentSubmissions = async ({
                   }
                   problem={submission.title}
                   time={
-                    hours < 24
-                      ? `${hours} hours ago`
-                      : hours < 48
-                        ? "Yesterday"
-                        : hours < 72
-                          ? "2 days ago"
-                          : hours < 96
-                            ? "3 days ago"
-                            : hours < 120
-                              ? "4 days ago"
-                              : hours < 144
-                                ? "5 days ago"
-                                : hours < 168
-                                  ? "6 days ago"
-                                  : hours < 168 * 2
-                                    ? "Last Week"
-                                    : "More than a week ago"
+                    hours == 0
+                      ? "Just now"
+                      : hours < 24
+                        ? `${hours} hours ago`
+                        : hours < 48
+                          ? "Yesterday"
+                          : hours < 72
+                            ? "2 days ago"
+                            : hours < 96
+                              ? "3 days ago"
+                              : hours < 120
+                                ? "4 days ago"
+                                : hours < 144
+                                  ? "5 days ago"
+                                  : hours < 168
+                                    ? "6 days ago"
+                                    : hours < 168 * 2
+                                      ? "Last Week"
+                                      : "More than a week ago"
                   }
                 />
               );

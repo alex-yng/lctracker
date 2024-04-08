@@ -1,4 +1,4 @@
-import { fetchCalendar, fetchRecentSub } from "@/lib/fetchStats";
+import { fetchCalendar } from "@/lib/fetchStats";
 import {
   Card,
   CardHeader,
@@ -7,7 +7,6 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
-import { Submission, recentSubmissions } from "@/const";
 import { cn } from "@/lib/utils";
 import { SubmissionCalendar } from "@/const";
 import Day from "@/components/dashboard/calendar/Day";
@@ -32,6 +31,24 @@ const Calendar = async ({
   // Sort the array in ascending order
   keys.reverse();
   const display = keys.slice(0, 14);
+
+  // Get last 14 days of submissions
+  // ith day holds the number of submissions on the ith day
+  // let test = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  // let i = 0;
+  // let j = 0;
+  // while (i < 14 && j < keys.length) {
+  //   let time = initialTime - 86400 * (i + 1);
+  //   let submissions = 0;
+
+  //   while (j < keys.length && keys[j] > time) {
+  //     submissions += parsed[keys[j]];
+  //     j++;
+  //   }
+
+  //   display[i] = submissions;
+  //   i++;
+  // }
 
   // Calculate the streak and get recent submissions to display
   let streak = 0;
@@ -70,9 +87,9 @@ const Calendar = async ({
           <span className="text-lg">🤩</span>
         </CardDescription>
       </CardHeader>
-      <CardContent className="grid h-3/4 grid-cols-7 grid-rows-2 place-items-center">
+      <CardContent className="grid h-3/4 grid-cols-7 grid-rows-2 place-items-center gap-4">
         {display.map((key) => {
-          const days = Math.round((initialTime - key) / 86400);
+          const days = Math.floor((initialTime - key) / 86400);
           return <Day key={key} day={days} submissions={parsed[key]} />;
         })}
         <CardFooter></CardFooter>
