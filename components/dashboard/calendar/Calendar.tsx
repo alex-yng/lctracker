@@ -22,6 +22,26 @@ const Calendar = async ({
   const calendar: SubmissionCalendar = await fetchCalendar(username);
   const parsed = JSON.parse(calendar.submissionCalendar);
   const initialTime = Date.now() / 1000;
+  const keys: number[] = [];
+  Object.entries(parsed).map(([key, value]) => {
+    keys.push(Number(key));
+  });
+  keys.reverse();
+  let streak = 0;
+  let i = 0;
+  while (i < keys.length) {
+    if (i === 0) {
+      if (initialTime - keys[i] < 86400 * 7) {
+        streak++;
+        i++;
+      }
+    } else if (keys[i - 1] - keys[i] < 86400 * 7) {
+      streak++;
+      i++;
+    } else {
+      break;
+    }
+  }
 
   return (
     <Card
@@ -33,14 +53,14 @@ const Calendar = async ({
       <CardHeader>
         <CardTitle>Subimssion Calendar</CardTitle>
         <CardDescription className="flex items-center gap-2">
-          Keep up the good work! <span className="text-lg">🤩</span>
+          You're on a <strong>{streak}</strong> week streak! Keep up the good
+          work! <span className="text-lg">🤩</span>
         </CardDescription>
       </CardHeader>
-      <CardContent>
-        {Object.entries(parsed).map(([key, value]) => {
-          console.log(key, value);
-          const day = Math.round((initialTime - Number(key)) / 86400);
-          return <Day day={day} />;
+      <CardContent className="flex flex-wrap gap-4">
+        {keys.map((key) => {
+          const days = Math.round((initialTime - key) / 86400);
+          return <Day key={key} day={days} submissions={parsed[key]} />;
         })}
         <CardFooter></CardFooter>
       </CardContent>
