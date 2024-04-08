@@ -1,5 +1,6 @@
 import { DailyQuestion, userData } from "@/const";
 
+// Fetch profiles solved questions
 export const fetchProfile = async (username: string) => {
   try {
     const response = await fetch(`http://localhost:3001/${username}/solved`);
@@ -11,6 +12,7 @@ export const fetchProfile = async (username: string) => {
   }
 };
 
+// Fetch last x subimssions
 export const fetchRecentSub = async (username: string, limit: number) => {
   try {
     const response = await fetch(
@@ -24,6 +26,7 @@ export const fetchRecentSub = async (username: string, limit: number) => {
   }
 };
 
+// Fetch the daily question
 export const fetchDaiy = async () => {
   try {
     const response = await fetch(`http://localhost:3001/daily`);
@@ -35,6 +38,7 @@ export const fetchDaiy = async () => {
   }
 };
 
+// Fetch submission calendar; returns json with submissionCalendar key which holds a stringified object of time: submissions
 export const fetchCalendar = async (username: string) => {
   try {
     const response = await fetch(`http://localhost:3001/${username}/calendar`);

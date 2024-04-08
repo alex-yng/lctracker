@@ -25,8 +25,8 @@ const Daily = async ({ className = "" }: { className?: string }) => {
     >
       <Card>
         <CardHeader>
-          <CardTitle>Problem of the Day!</CardTitle>
-          <CardDescription>{daily?.date}</CardDescription>
+          <CardTitle>Problem of the Day</CardTitle>
+          <CardDescription>{daily?.date} 🔥</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-2">
           <h2 className="font-semibold">
@@ -34,7 +34,7 @@ const Daily = async ({ className = "" }: { className?: string }) => {
           </h2>
           <div className="flex flex-wrap gap-3">
             <span
-              className={`rounded bg-muted px-2 py-1 text-sm text-primary ${daily.difficulty === "Easy" ? "text-green-500" : daily.difficulty === "Medium" ? "text-yellow-600 dark:text-yellow-400" : "text-red-500"}`}
+              className={`rounded bg-muted px-2 py-1 text-sm text-primary ${daily.difficulty === "Easy" ? "text-green-600 dark:text-green-500" : daily.difficulty === "Medium" ? "text-yellow-600 dark:text-yellow-400" : "text-red-600 dark:text-red-500"}`}
             >
               {daily.difficulty}
             </span>

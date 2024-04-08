@@ -26,6 +26,7 @@ const RecentSubmissions = async ({
   username: string;
   className?: string;
 }) => {
+  // Fetch recent submissions and calculate time elapsed since now
   const recentAC: recentSubmissions = await fetchRecentSub(username, 7);
   const submissions = recentAC.submission;
   const initialTime = Date.now() / 1000;
@@ -81,7 +82,9 @@ const RecentSubmissions = async ({
                                 ? "5 days ago"
                                 : hours < 168
                                   ? "6 days ago"
-                                  : "Last Week"
+                                  : hours < 168 * 2
+                                    ? "Last Week"
+                                    : "More than a week ago"
                   }
                 />
               );
