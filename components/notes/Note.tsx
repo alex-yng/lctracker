@@ -11,16 +11,21 @@ const Note = ({
   probTitle = "Two Sum",
   content = "",
   publishedDate = "2021-09-01",
+  fetchNotes,
 }: {
   probID: string;
   probTitle?: string;
   content: string;
   publishedDate?: string;
+  fetchNotes: () => void;
 }) => {
   const deletePost = () => {
     fetch(`http://localhost:8000/notes/${probID}/delete/`, {
       method: "DELETE",
     });
+    setTimeout(() => {
+      fetchNotes();
+    }, 200);
   };
 
   return (

@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-const MakeNote = () => {
+const MakeNote = ({ fetchNotes }: { fetchNotes: () => void }) => {
   const handleSubmit = (e: FormData) => {
     console.log("submitted");
     fetch("http://localhost:8000/notes/create/", {
@@ -18,6 +18,7 @@ const MakeNote = () => {
         content: e.get("noteContent"),
       }),
     });
+    fetchNotes();
   };
 
   return (
