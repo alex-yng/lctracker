@@ -18,8 +18,6 @@ const Notes = () => {
         content: e.get("noteContent"),
       }),
     });
-    e.set("probID", "");
-    e.set("noteContent", "");
   };
 
   return (
