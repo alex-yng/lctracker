@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 const Notes = () => {
   const handleSubmit = (e: FormData) => {
     console.log("submitted");
-    fetch("http://localhost:8000/notes/", {
+    fetch("http://localhost:8000/notes/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
