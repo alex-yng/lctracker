@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { LayoutDashboard, NotebookPen } from "lucide-react";
-import { UserButton } from "@clerk/nextjs";
 import NavIcon from "@/components/userapp/NavIcon";
 import ModeToggle from "@/components/ModeToggle";
 import { SettingsDialogue } from "@/components/userapp/SettingsDialogue";
@@ -17,15 +16,14 @@ const SideNav = () => {
           </Link>
         </NavIcon>
         <NavIcon text="Notes" href="/notes">
-          <NotebookPen size={24}></NotebookPen>
+          <Link href="/notes">
+            <NotebookPen size={24}></NotebookPen>
+          </Link>
         </NavIcon>
       </div>
       <div className="flex flex-col items-center justify-center gap-6 py-2">
         <ModeToggle />
         <SettingsDialogue />
-        <NavIcon text="Profile" href="">
-          <UserButton afterSignOutUrl="/" />
-        </NavIcon>
       </div>
     </aside>
   );

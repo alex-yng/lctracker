@@ -34,13 +34,13 @@ const Hero = () => {
       <div className="container flex w-full flex-col gap-4 text-center md:text-left lg:gap-8">
         <h1 className="text-3xl font-semibold sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
           <strong className="inline-block bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent dark:from-blue-600 dark:to-violet-600">
-            Improve faster than ever.
+            All-in-one Leetcode tool
           </strong>
         </h1>
         <p className="leading-relaxed text-primary-dim sm:text-xl md:text-2xl lg:text-3xl">
           Advance your Leetcode skills
           <em>
-            <strong className="text-primary"> faster </strong>
+            <strong className="text-primary">faster </strong>
           </em>
           with efficient
           <em>

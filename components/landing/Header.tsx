@@ -8,7 +8,7 @@ const Header = () => {
     <header className="fixed z-50 hidden w-full border-b border-muted px-8 py-4 backdrop-blur-md md:grid md:px-12 lg:px-16">
       <div className="flex items-center justify-between tracking-wider">
         <Link href="/">
-          <strong>NAME</strong>
+          <strong>LC Tracker</strong>
         </Link>
         <nav>
           <ul className="flex items-center gap-8 md:gap-12 lg:gap-16">
