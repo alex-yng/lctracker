@@ -21,7 +21,7 @@ const MakeNote = () => {
   };
 
   return (
-    <form className="flex h-full flex-col gap-8" action={handleSubmit}>
+    <form className="flex max-h-[90vh] flex-col gap-8" action={handleSubmit}>
       <h1 className="text-4xl">New Note</h1>
       <div className="flex flex-col gap-2">
         <Label htmlFor="probID" className="text-2xl">

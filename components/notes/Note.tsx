@@ -1,14 +1,28 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const Note = ({
   probID = "1",
   probTitle = "Two Sum",
   content = "",
+  publishedDate = "2021-09-01",
 }: {
   probID: string;
   probTitle?: string;
   content: string;
+  publishedDate?: string;
 }) => {
+  const deletePost = () => {
+    fetch(`http://localhost:8000/notes/${probID}/delete/`, {
+      method: "DELETE",
+    });
+  };
+
   return (
     <Card>
       <CardHeader>
@@ -17,6 +31,12 @@ const Note = ({
       <CardContent>
         <p>{content}</p>
       </CardContent>
+      <CardFooter className="flex w-full items-center justify-between">
+        <p>{publishedDate}</p>
+        <Button variant="destructive" onClick={deletePost}>
+          Delete
+        </Button>
+      </CardFooter>
     </Card>
   );
 };
