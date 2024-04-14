@@ -23,9 +23,7 @@ const Note = ({
     fetch(`http://localhost:8000/notes/${probID}/delete/`, {
       method: "DELETE",
     });
-    setTimeout(() => {
-      fetchNotes();
-    }, 200);
+    fetchNotes();
   };
 
   return (

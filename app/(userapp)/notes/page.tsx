@@ -8,13 +8,15 @@ const Notes = () => {
   const [data, setData] = useState([]);
 
   const fetchNotes = async () => {
-    try {
-      const response = await fetch("http://localhost:8000/notes/");
-      const data = await response.json();
-      setData(data);
-    } catch (error) {
-      console.error("Error fetching notes:", error);
-    }
+    setTimeout(async () => {
+      try {
+        const response = await fetch("http://localhost:8000/notes/");
+        const data = await response.json();
+        setData(data);
+      } catch (error) {
+        console.error("Error fetching notes:", error);
+      }
+    }, 200);
   };
   useEffect(() => {
     fetchNotes();

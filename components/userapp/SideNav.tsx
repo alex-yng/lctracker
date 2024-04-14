@@ -11,9 +11,9 @@ const SideNav = () => {
     <aside className="fixed flex h-screen w-16 flex-col items-center justify-between border-r border-muted bg-background px-2 py-4 opacity-80">
       <div className="flex flex-col items-center justify-center gap-6 py-2">
         <NavIcon text="Dashboard" href="/dashboard">
-          <Link href="/dashboard">
+          <a href="/dashboard">
             <LayoutDashboard size={24}></LayoutDashboard>
-          </Link>
+          </a>
         </NavIcon>
         <NavIcon text="Notes" href="/notes">
           <Link href="/notes">
