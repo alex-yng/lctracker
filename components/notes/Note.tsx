@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -5,6 +7,19 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Pencil } from "lucide-react";
+import {
+  DialogHeader,
+  DialogFooter,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+  Dialog,
+} from "@/components/ui/dialog";
+import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
+import { DialogClose } from "@radix-ui/react-dialog";
 
 const Note = ({
   probID = "1",
@@ -19,9 +34,22 @@ const Note = ({
   publishedDate?: string;
   fetchNotes: () => void;
 }) => {
+  const [newContent, setNewContent] = useState("content");
+
   const deletePost = () => {
-    fetch(`http://localhost:8000/notes/${probID}/delete/`, {
+    fetch(`http://localhost:8000/notes/${probID}/`, {
       method: "DELETE",
+    });
+    fetchNotes();
+  };
+
+  const updatePost = (content: string) => {
+    fetch(`http://localhost:8000/notes/${probID}/`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ content: content }),
     });
     fetchNotes();
   };
@@ -33,11 +61,44 @@ const Note = ({
       </CardHeader>
       <CardContent>
         <p>{content}</p>
+        <Dialog>
+          <DialogTrigger>
+            <Button variant="ghost" className="relative w-12">
+              <Pencil />
+            </Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Edit note</DialogTitle>
+              <DialogDescription>
+                <Textarea
+                  className="h-48 w-full"
+                  defaultValue={content}
+                  onChange={(e) => setNewContent(e.target.value)}
+                />
+              </DialogDescription>
+            </DialogHeader>
+            <DialogFooter>
+              <DialogClose asChild>
+                <Button
+                  variant="outline"
+                  onClick={() => updatePost(newContent)}
+                >
+                  Save
+                </Button>
+              </DialogClose>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </CardContent>
-      <CardFooter className="flex w-full items-center justify-between">
+      <CardFooter>
         <p>{publishedDate}</p>
-        <Button variant="destructive" onClick={deletePost}>
-          Delete
+        <Button
+          variant="destructive"
+          onClick={deletePost}
+          className="relative w-12"
+        >
+          X
         </Button>
       </CardFooter>
     </Card>
