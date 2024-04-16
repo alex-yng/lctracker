@@ -22,10 +22,10 @@ import { useState } from "react";
 import { DialogClose } from "@radix-ui/react-dialog";
 
 const Note = ({
-  probID = "1",
-  probTitle = "Two Sum",
-  content = "",
-  publishedDate = "2021-09-01",
+  probID,
+  probTitle,
+  content,
+  publishedDate,
   fetchNotes,
 }: {
   probID: string;
