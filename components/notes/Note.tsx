@@ -59,7 +59,7 @@ const Note = ({
       <CardHeader>
         <h1 className="text-2xl">{`${probID}. ${probTitle}`}</h1>
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex items-center justify-between">
         <p>{content}</p>
         <Dialog>
           <DialogTrigger>
@@ -91,7 +91,7 @@ const Note = ({
           </DialogContent>
         </Dialog>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="flex items-center justify-between">
         <p>{publishedDate}</p>
         <Button
           variant="destructive"
