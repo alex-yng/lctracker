@@ -41,7 +41,7 @@ const MakeNote = ({ fetchNotes }: { fetchNotes: () => void }) => {
           required
         />
       </div>
-      <Button variant="outline" type="submit">
+      <Button variant="secondary" type="submit">
         Save
       </Button>
     </form>
