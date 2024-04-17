@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { LayoutDashboard, NotebookPen } from "lucide-react";
+import { LayoutDashboard, NotebookPen, Lightbulb } from "lucide-react";
 import NavIcon from "@/components/userapp/NavIcon";
 import ModeToggle from "@/components/ModeToggle";
 import { SettingsDialogue } from "@/components/userapp/SettingsDialogue";
@@ -18,6 +18,11 @@ const SideNav = () => {
         <NavIcon text="Notes" href="/notes">
           <Link href="/notes">
             <NotebookPen size={24}></NotebookPen>
+          </Link>
+        </NavIcon>
+        <NavIcon text="Insights" href="/insights">
+          <Link href="/insights">
+            <Lightbulb size={24}></Lightbulb>
           </Link>
         </NavIcon>
       </div>
