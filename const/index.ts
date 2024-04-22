@@ -76,6 +76,12 @@ export type SimilarQuestion = {
   translatedTitle: string | null;
 };
 
+// Recent AC Submissions
+export type recentACSubmissions = {
+  count: number;
+  submission: submission[];
+};
+
 // Submission Calendar
 export type SubmissionCalendar = {
   submissionCalendar: string;

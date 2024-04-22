@@ -1,4 +1,4 @@
-import { DailyQuestion, userData } from "@/const";
+import { DailyQuestion, userData, recentACSubmissions } from "@/const";
 
 // Fetch profiles solved questions
 export const fetchProfile = async (username: string) => {
@@ -20,6 +20,20 @@ export const fetchRecentSub = async (username: string, limit: number) => {
     );
     const data = await response.json();
     return data;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+};
+
+// Fetch x recently accepted submissions
+export const fetchRecentAC = async (username: string, limit: number) => {
+  try {
+    const response = await fetch(
+      `http://localhost:3001/${username}/acSubmission?limit=${limit}`,
+    );
+    const data = await response.json();
+    return data as recentACSubmissions;
   } catch (error) {
     console.error(error);
     return [];
@@ -49,35 +63,3 @@ export const fetchCalendar = async (username: string) => {
     return [];
   }
 };
-
-// export const fetchRecentAC = async (username: string, limit: number) => {
-//   const graphqlQuery = JSON.stringify({
-//     query: `query recentAcSubmissions($username: String!, $limit: Int!) {
-//       recentAcSubmissionList(username: $username, limit: $limit) {
-//         id
-//         title
-//         titleSlug
-//         timestamp
-//       }
-//     }`,
-//     variables: { username: `${username}, limit: ${limit}` },
-//   });
-
-//   const requestOptions = {
-//     method: "POST",
-//     headers: { "Content-Type": "application/json" },
-//     body: graphqlQuery,
-//   };
-
-//   try {
-//     const response = await fetch(
-//       "https://leetcode.com/graphql",
-//       requestOptions,
-//     );
-//     const data = await response.json();
-//     return data;
-//   } catch (error) {
-//     console.error(error);
-//     return [];
-//   }
-// };
