@@ -4,4 +4,4 @@ LC Tracker is a web-app built to review and track your leetcode progress and imp
 
 See backend repository <a href="https://github.com/alex-yng/lctracker-backend" target="_blank"><strong>here</strong></a>
 
-**WIP**
+**deprecated**
