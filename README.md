@@ -2,6 +2,6 @@
 
 LC Tracker is a web-app built to review and track your leetcode progress and improve faster. Made with Next.js, Typescript, and Tailwind on the frontend.
 
-See backend repository <a href="https://github.com/alex-yng/lctracker-backend" target="_blank"><strong>here</strong></a>
+See backend repository <a href="https://github.com/alexleyoung/lctracker-backend" target="_blank"><strong>here</strong></a>
 
 **deprecated**
